@@ -1,0 +1,67 @@
+.container_form {
+    margin: auto 25px;
+    height: 50vh;
+    box-shadow: 5px 8px 19px -9px rgba(0, 0, 0, 0.1), -8px -3px 35px -5px rgba(0, 0, 0, 0.1);
+}
+
+.container_form h1 {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 25px;
+}
+
+.form_cadastrar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3em;
+    padding: 10px;
+}
+
+.form_cadastrar label {
+    margin: 10px auto;
+}
+
+.form_cadastrar span {
+    margin-right: 10px;
+}
+.form_cadastrar input {
+    width: 300px;
+    border: none;
+    padding: 10px;
+    font-size: 0.7em;
+    box-shadow: inset 15px 5px 4px -14px rgba(0, 0, 0, 0.1), 5px 1px 6px -9px rgba(0, 0, 0, 0.1);
+    color: rgba(0, 0, 0, 0.471);
+}
+
+.form_cadastrar button {
+    width: 100px;
+    height: 40px;
+    margin-top: 25px;
+    font-size: 0.8em;
+    background-color: #7dce94;
+    color: #3d3d3f;
+    border: none;
+    box-shadow: 5px 8px 19px -9px rgba(0, 0, 0, 0.29), 8px 10px 5px -5px rgba(0, 0, 0, 0.1);
+}
+
+.form_cadastrar button:active {
+    transform: translateY(2px);
+    box-shadow: none;
+}
+
+@media screen and (max-width: 480px) {
+    .container_form {
+        height: 60vh;
+    }
+    .form_cadastrar input {
+        width: 90%;
+        margin: 5px 0;
+    }
+
+    .form_cadastrar label {
+        width: 90%;
+        margin: 2px auto;
+    }
+}

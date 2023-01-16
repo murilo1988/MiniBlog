@@ -1,0 +1,14 @@
+{
+    "arrowParens": "avoid",
+    "bracketSpacing": true,
+    "endOfLine": "lf",
+    "plugins": [
+        "React"
+    ],
+    "tabWidth": 4,
+    "trailingComma": "es5",
+    "bracketSameLine": false,
+    "jsxBracketSameLine": false,
+    "singleQuote": false,
+    "singleAttributePerLine": true
+}
