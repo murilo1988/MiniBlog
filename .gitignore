@@ -1,3 +1,7 @@
 
 # ignore node modules
 node_modules/
+
+# ignore this to
+favicon.ico
+manifest.json
