@@ -25,7 +25,7 @@ function NavBar() {
                 <>
                     <NavLink
                         className={styles.brand}
-                        to="/"
+                        to="/login"
                     >
                         Mini <span>Blog</span>
                     </NavLink>
@@ -33,26 +33,50 @@ function NavBar() {
             )}
 
             <ul className={styles.links_list}>
-                <li>
-                    <NavLink
-                        to="/home"
-                        className={({ isActive }) =>
-                            isActive ? styles.active : styles.inactive
-                        }
-                    >
-                        Home
-                    </NavLink>
-                </li>
-                <li>
-                    <NavLink
-                        to="/about"
-                        className={({ isActive }) =>
-                            isActive ? styles.active : styles.inactive
-                        }
-                    >
-                        About
-                    </NavLink>
-                </li>
+                {user && (
+                    <>
+                        <li>
+                            <NavLink
+                                to="/home"
+                                className={({ isActive }) =>
+                                    isActive ? styles.active : styles.inactive
+                                }
+                            >
+                                Home
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink
+                                to="/post/create"
+                                className={({ isActive }) =>
+                                    isActive ? styles.active : styles.inactive
+                                }
+                            >
+                                Novo post
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink
+                                to="/dashboard"
+                                className={({ isActive }) =>
+                                    isActive ? styles.active : styles.inactive
+                                }
+                            >
+                                Dashboard
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink
+                                to="/about"
+                                className={({ isActive }) =>
+                                    isActive ? styles.active : styles.inactive
+                                }
+                            >
+                                Sobre
+                            </NavLink>
+                        </li>
+                    </>
+                )}
                 {!user && (
                     <>
                         <li>
