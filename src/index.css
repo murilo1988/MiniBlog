@@ -38,8 +38,11 @@ button[disabled] {
 
 /* error message */
 .container .error {
-  background-color: #ff7260;
+  background-color: #ff7260e6;
   color: rgb(255, 255, 255);
-  padding: 7px;
+  padding: 8px;
   border-radius: 5px;
+  text-align: center;
+  width: 60%;
+  margin: 35px auto;
 }
