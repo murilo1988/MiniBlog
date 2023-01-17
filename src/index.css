@@ -31,11 +31,6 @@ nav button:hover {
   color: #cfe0f9;
 }
 
-button[disabled] {
-  background-color: #cfe0f9;
-  color: rgba(0, 0, 0, 0.553);
-}
-
 /* error message */
 .container .error {
   background-color: #ff7260e6;

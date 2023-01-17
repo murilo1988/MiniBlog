@@ -15,8 +15,9 @@ function Register() {
     const [confirmPassword, setConfirmpassoword] = useState("");
     const [error, setError] = useState("");
 
-    const { createUser, error: authError, loadind } = useAuthentication();
+    const { createUser, error: authError, loading } = useAuthentication();
 
+    // handles
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -29,8 +30,6 @@ function Register() {
         };
 
         if (password !== confirmPassword) {
-            setError("As senhas precisam ser iguais!");
-
             return handleError();
         }
 
@@ -45,10 +44,17 @@ function Register() {
     };
 
     const handleError = () => {
-        console.log(error);
+        setError("As senhas precisam ser iguais!");
 
         setConfirmpassoword("");
     };
+
+    //hooks
+    useEffect(() => {
+        if (authError) {
+            setError(authError);
+        }
+    }, [authError]);
 
     return (
         <div className={styles.container_form}>
@@ -102,13 +108,26 @@ function Register() {
                         onChange={(e) => setConfirmpassoword(e.target.value)}
                     />
                 </label>
-                <button
-                    className={styles.form_cadastrar__btn}
-                    type="Submit"
-                    value="Cadastrar"
-                >
-                    Cadastrar
-                </button>
+                {!loading && (
+                    <button
+                        className={styles.form_cadastrar__btn}
+                        type="Submit"
+                        value="Cadastrar"
+                    >
+                        Cadastrar
+                    </button>
+                )}
+                {loading && (
+                    <button
+                        className={styles.form_cadastrar__btn}
+                        disabled
+                        type="Submit"
+                        value="Cadastrar"
+                    >
+                        Aguarde...
+                    </button>
+                )}
+
                 {error && <p className="error">{error}</p>}
             </form>
         </div>
@@ -116,3 +135,4 @@ function Register() {
 }
 
 export default Register;
+
