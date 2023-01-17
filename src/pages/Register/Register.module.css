@@ -1,13 +1,15 @@
 .container_form {
-    margin: auto 25px;
-    height: 50vh;
+    margin: auto 150px;
+    height: 70vh;
+    width: 600px;
+    margin: 0 auto;
     box-shadow: 5px 8px 19px -9px rgba(0, 0, 0, 0.1), -8px -3px 35px -5px rgba(0, 0, 0, 0.1);
 }
 
 .container_form h1 {
     text-align: center;
-    margin-top: 50px;
-    padding-top: 25px;
+    margin-top: 25px;
+    padding-top: 10px;
 }
 
 .form_cadastrar {
@@ -15,18 +17,27 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 1.3em;
-    padding: 10px;
+    padding-top: 50px;
+    font-size: 1.2em;
 }
 
-.form_cadastrar label {
-    margin: 10px auto;
+label {
+    display: grid;
+    grid-template-columns: 70px 300px;
+    align-items: center;
+    margin-bottom: 30px;
 }
 
 .form_cadastrar span {
+    display: flex;
+    justify-content: flex-end;
     margin-right: 10px;
 }
+
 .form_cadastrar input {
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
     width: 300px;
     border: none;
     padding: 10px;
@@ -38,7 +49,7 @@
 .form_cadastrar button {
     width: 100px;
     height: 40px;
-    margin-top: 25px;
+    margin-top: 40px;
     font-size: 0.8em;
     background-color: #7dce94;
     color: #3d3d3f;
@@ -51,17 +62,33 @@
     box-shadow: none;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 650px) {
     .container_form {
-        height: 60vh;
-    }
-    .form_cadastrar input {
-        width: 90%;
-        margin: 5px 0;
+        width: 300px;
+        margin: 0 auto;
+        height: 80vh;
     }
 
-    .form_cadastrar label {
-        width: 90%;
-        margin: 2px auto;
+    h1 {
+        margin-bottom: -15px;
+        font-size: 1.6em;
+    }
+
+    label {
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .form_cadastrar span {
+        display: flex;
+        justify-content: flex-start;
+        margin-left: 3px;
+        margin-bottom: 5px;
+    }
+
+    .form_cadastrar input {
+        width: 250px;
     }
 }
