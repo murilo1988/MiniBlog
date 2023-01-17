@@ -8,6 +8,7 @@ body {
 input::placeholder,
 textarea::placeholder {
   font-family: "Crimson Text", sans-serif;
+  color: rgba(0, 0, 0, 0.422);
 }
 
 input:focus,
@@ -21,11 +22,24 @@ nav button {
   background-color: transparent;
   border: none;
   color: black;
-  transition: 0.5s;
+  transition: 1s;
   font-size: 1em;
   cursor: pointer;
 }
 
 nav button:hover {
   color: #cfe0f9;
+}
+
+button[disabled] {
+  background-color: #cfe0f9;
+  color: rgba(0, 0, 0, 0.553);
+}
+
+/* error message */
+.container .error {
+  background-color: #ff7260;
+  color: rgb(255, 255, 255);
+  padding: 7px;
+  border-radius: 5px;
 }
