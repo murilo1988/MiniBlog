@@ -3,13 +3,7 @@
 # MiniBlog
 
 # The ideia
-
-Is create a miniblog with front to back using firebase and react.
-In this miniblog you will be capable to add photos with title and, receive comments an give the like.
-
-# CRUD
-
-To post, delete and update all 
+It's create a front-to-back miniblog using firebase and react. In this miniblog you can add photos with title and receive comments and give your like.
 
 >>>>>>> 664b4db (Add files via upload)
 # Getting Started with Create React App
