@@ -17,7 +17,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 50px;
+    padding-top: 20px;
     font-size: 1.2em;
 }
 
@@ -38,7 +38,7 @@ label {
     display: flex;
     justify-content: flex-start;
     align-items: baseline;
-    width: 300px;
+    width: 250px;
     border: none;
     padding: 10px;
     font-size: 0.7em;
@@ -66,7 +66,7 @@ label {
     .container_form {
         width: 300px;
         margin: 0 auto;
-        height: 80vh;
+        height: 85vh;
     }
 
     h1 {
@@ -89,6 +89,6 @@ label {
     }
 
     .form_cadastrar input {
-        width: 250px;
+        width: 230px;
     }
 }
