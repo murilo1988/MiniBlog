@@ -1,13 +1,8 @@
 {
     "bracketSpacing": true,
-    "endOfLine": "lf",
-    "plugins": [
-        "React"
-    ],
+    "endOfLine": "crlf",
+    "arrowParens": "always",
     "tabWidth": 4,
-    "trailingComma": "es5",
-    "bracketSameLine": false,
-    "jsxBracketSameLine": false,
-    "singleQuote": false,
+    "trailingComma": "all",
     "singleAttributePerLine": true
 }

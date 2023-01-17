@@ -29,7 +29,7 @@ export const useAuthentication = () => {
         checkIfIsCancelled();
 
         setLoading(true);
-        setError("");
+        setError(null);
 
         try {
             const { user } = createUserWithEmailAndPassword(

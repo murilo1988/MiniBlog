@@ -6,6 +6,8 @@ import styles from "./Register.module.css";
 // hooks
 import { useState, useEffect } from "react";
 
+import { useAuthentication } from "../../hooks/useAuthentication";
+
 function Register() {
     const [displayName, setDisplayName] = useState("");
     const [email, setEmail] = useState("");
@@ -13,7 +15,9 @@ function Register() {
     const [confirmPassword, setConfirmpassoword] = useState("");
     const [error, setError] = useState("");
 
-    const handleSubmit = (e) => {
+    const { createUser, error: authError, loadind } = useAuthentication();
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
         setError("");
@@ -29,7 +33,10 @@ function Register() {
 
             return handleError();
         }
-        console.log(user);
+
+        const res = await createUser(user);
+
+        console.log(res);
 
         setDisplayName("");
         setEmail("");
@@ -39,6 +46,7 @@ function Register() {
 
     const handleError = () => {
         console.log(error);
+
         setConfirmpassoword("");
     };
 
@@ -101,8 +109,8 @@ function Register() {
                 >
                     Cadastrar
                 </button>
+                {error && <p className="error">{error}</p>}
             </form>
-            {error && <p className="error">{error}</p>}
         </div>
     );
 }
