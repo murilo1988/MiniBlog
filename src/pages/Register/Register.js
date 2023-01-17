@@ -24,7 +24,7 @@ function Register() {
                     <span>E-mail:</span>
                     <input
                         type="email"
-                        name="displayName"
+                        name="email"
                         required
                         placeholder="E-mail do usuário"
                     />
@@ -33,9 +33,18 @@ function Register() {
                     <span>Senha:</span>
                     <input
                         type="password"
-                        name="displayName"
+                        name="password"
                         required
                         placeholder="Senha do usuário"
+                    />
+                </label>
+                <label>
+                    <span>Confirme:</span>
+                    <input
+                        type="password"
+                        name="confirmpassoword"
+                        required
+                        placeholder="Confirme sua senha"
                     />
                 </label>
                 <button
