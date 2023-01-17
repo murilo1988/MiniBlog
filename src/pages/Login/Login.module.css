@@ -1,13 +1,15 @@
 .container_login {
-    margin: auto 25px;
-    height: 50vh;
-    box-shadow: 5px 5px 10px -5px rgba(0, 0, 0, 0.1), -5px -3px 12px -5px rgba(0, 0, 0, 0.1);
+    margin: auto 150px;
+    height: 70vh;
+    width: 600px;
+    margin: 0 auto;
+    box-shadow: 5px 8px 19px -9px rgba(0, 0, 0, 0.1), -8px -3px 35px -5px rgba(0, 0, 0, 0.1);
 }
 
 .container_login h1 {
     text-align: center;
-    margin-top: 50px;
-    padding-top: 25px;
+    margin-top: 25px;
+    padding-top: 20px;
 }
 
 .form_login {
@@ -15,18 +17,27 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 1.3em;
-    padding: 10px;
+    padding-top: 50px;
+    font-size: 1.2em;
 }
 
-.form_login label {
-    margin: 10px auto;
+label {
+    display: grid;
+    grid-template-columns: 70px 300px;
+    align-items: center;
+    margin-bottom: 30px;
 }
 
 .form_login span {
+    display: flex;
+    justify-content: flex-end;
     margin-right: 10px;
 }
+
 .form_login input {
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
     width: 300px;
     border: none;
     padding: 10px;
@@ -38,7 +49,7 @@
 .form_login button {
     width: 100px;
     height: 40px;
-    margin-top: 25px;
+    margin-top: 40px;
     font-size: 0.8em;
     background-color: #7dce94;
     color: #3d3d3f;
@@ -51,15 +62,33 @@
     box-shadow: none;
 }
 
-@media screen and (max-width: 480px) {
-    .form_login input {
-        width: 90%;
-        margin: 5px 0;
+@media screen and (max-width: 650px) {
+    .container_login {
+        width: 300px;
+        margin: 0 auto;
+        height: 70vh;
     }
 
-    .form_login label {
-        width: 90%;
-        margin: 0 auto;
-        margin: 2px 0;
+    h1 {
+        margin-bottom: 30px;
+        font-size: 1.8em;
+    }
+
+    label {
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .form_login span {
+        display: flex;
+        justify-content: flex-start;
+        margin-left: 3px;
+        margin-bottom: 5px;
+    }
+
+    .form_login input {
+        width: 250px;
     }
 }
