@@ -46,7 +46,7 @@ function NavBar() {
                                     isActive ? styles.active : styles.inactive
                                 }
                             >
-                                Novo Post
+                                Criar Post
                             </NavLink>
                         </li>
                         <li>
@@ -67,6 +67,16 @@ function NavBar() {
                                 }
                             >
                                 Sobre
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink
+                                to="/logout"
+                                className={({ isActive }) =>
+                                    isActive ? styles.active : styles.inactive
+                                }
+                            >
+                                Sair
                             </NavLink>
                         </li>
                     </>

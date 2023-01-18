@@ -1,5 +1,6 @@
 .navbar {
     display: flex;
+    height: 60px;
     box-shadow: 1px -3px 3px 0 rgba(0, 0, 0, 0.185);
     justify-content: space-between;
     align-items: center;
@@ -42,4 +43,22 @@
 .inactive {
     color: black;
     font-size: 1em;
+}
+
+@media screen and (max-width: 480px) {
+    .links_list li:nth-last-child(2n) {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 649px) {
+    .links_list li:nth-child(3n) {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 670px) {
+    .links_list li:nth-child(4n) {
+        display: none;
+    }
 }
