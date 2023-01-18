@@ -59,10 +59,7 @@ function Register() {
     return (
         <div className={styles.container_form}>
             <h1> Cadastre-se para postar</h1>
-            <form
-                className={styles.form_cadastrar}
-                onSubmit={handleSubmit}
-            >
+            <form className={styles.form_cadastrar} onSubmit={handleSubmit}>
                 <label>
                     <span>Nome:</span>
                     <input

@@ -13,20 +13,14 @@ function NavBar() {
         <nav className={styles.navbar}>
             {user && (
                 <>
-                    <NavLink
-                        className={styles.brand}
-                        to="/home"
-                    >
+                    <NavLink className={styles.brand} to="/home">
                         Mini <span>Blog</span>
                     </NavLink>
                 </>
             )}
             {!user && (
                 <>
-                    <NavLink
-                        className={styles.brand}
-                        to="/login"
-                    >
+                    <NavLink className={styles.brand} to="/login">
                         Mini <span>Blog</span>
                     </NavLink>
                 </>
@@ -52,7 +46,7 @@ function NavBar() {
                                     isActive ? styles.active : styles.inactive
                                 }
                             >
-                                Novo post
+                                Novo Post
                             </NavLink>
                         </li>
                         <li>

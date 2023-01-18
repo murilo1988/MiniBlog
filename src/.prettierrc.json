@@ -3,6 +3,5 @@
     "endOfLine": "crlf",
     "arrowParens": "always",
     "tabWidth": 4,
-    "trailingComma": "all",
-    "singleAttributePerLine": true
+    "trailingComma": "all"
 }

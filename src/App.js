@@ -47,34 +47,16 @@ function App() {
 
                     <div className="container">
                         <Routes>
-                            <Route
-                                path="/"
-                                element={<Login />}
-                            />
-                            <Route
-                                path="/home"
-                                element={<Home />}
-                            />
-                            <Route
-                                path="/about"
-                                element={<About />}
-                            />
-                            <Route
-                                path="/login"
-                                element={<Login />}
-                            />
-                            <Route
-                                path="/register"
-                                element={<Register />}
-                            />
+                            <Route path="/" element={<Login />} />
+                            <Route path="/home" element={<Home />} />
+                            <Route path="/about" element={<About />} />
+                            <Route path="/login" element={<Login />} />
+                            <Route path="/register" element={<Register />} />
                             <Route
                                 path="/post/create"
                                 element={<CreatePost />}
                             />
-                            <Route
-                                path="/dashboard"
-                                element={<Dashboard />}
-                            />
+                            <Route path="/dashboard" element={<Dashboard />} />
                         </Routes>
                     </div>
                     <Footer />
