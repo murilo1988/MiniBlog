@@ -15,9 +15,11 @@ import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import CreatePost from "./pages/CreatePost/CreatePost";
 import Dashboard from "./pages/Dashboard/Dashboard";
+import Logout from "./pages/Logout/Logout";
 
 // CSS
 import "./App.css";
+import styles from "./components/NavBar.module.css";
 
 //components
 import NavBar from "./components/NavBar";
@@ -48,15 +50,49 @@ function App() {
                     <div className="container">
                         <Routes>
                             <Route path="/" element={<Login />} />
-                            <Route path="/home" element={<Home />} />
-                            <Route path="/about" element={<About />} />
-                            <Route path="/login" element={<Login />} />
-                            <Route path="/register" element={<Register />} />
+                            <Route
+                                path="/login"
+                                element={
+                                    !user ? <Login /> : <Navigate to="/home" />
+                                }
+                            />
+                            <Route
+                                path="/register"
+                                element={
+                                    !user ? (
+                                        <Register />
+                                    ) : (
+                                        <Navigate to="/home" />
+                                    )
+                                }
+                            />
+                            <Route
+                                path="/home"
+                                element={user ? <Home /> : <Navigate to="/" />}
+                            />
+                            <Route
+                                path="/about"
+                                element={user ? <About /> : <Navigate to="/" />}
+                            />
+
                             <Route
                                 path="/post/create"
-                                element={<CreatePost />}
+                                element={
+                                    user ? <CreatePost /> : <Navigate to="/" />
+                                }
                             />
-                            <Route path="/dashboard" element={<Dashboard />} />
+                            <Route
+                                path="/dashboard"
+                                element={
+                                    user ? <Dashboard /> : <Navigate to="/" />
+                                }
+                            />
+                            <Route
+                                path="/logout"
+                                element={
+                                    user ? <Logout /> : <Navigate to="/" />
+                                }
+                            />
                         </Routes>
                     </div>
                     <Footer />
