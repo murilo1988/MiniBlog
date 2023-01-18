@@ -9,6 +9,7 @@ import styles from "./NavBar.module.css";
 
 function NavBar() {
     const { user } = useAuthValue();
+
     return (
         <nav className={styles.navbar}>
             {user && (
@@ -83,26 +84,32 @@ function NavBar() {
                 )}
                 {!user && (
                     <>
-                        <li>
-                            <NavLink
-                                to="/login"
-                                className={({ isActive }) =>
-                                    isActive ? styles.active : styles.inactive
-                                }
-                            >
-                                Entrar
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink
-                                to="/register"
-                                className={({ isActive }) =>
-                                    isActive ? styles.active : styles.inactive
-                                }
-                            >
-                                Cadastrar
-                            </NavLink>
-                        </li>
+                        <ul>
+                            <li>
+                                <NavLink
+                                    to="/login"
+                                    className={({ isActive }) =>
+                                        isActive
+                                            ? styles.active
+                                            : styles.inactive
+                                    }
+                                >
+                                    Entrar
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink
+                                    to="/register"
+                                    className={({ isActive }) =>
+                                        isActive
+                                            ? styles.active
+                                            : styles.inactive
+                                    }
+                                >
+                                    Cadastrar
+                                </NavLink>
+                            </li>
+                        </ul>
                     </>
                 )}
             </ul>

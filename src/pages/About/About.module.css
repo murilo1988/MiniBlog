@@ -1,0 +1,31 @@
+.container {
+    height: 70vh;
+    width: 600px;
+    margin: 0 auto;
+    box-shadow: 5px 8px 19px -9px rgba(0, 0, 0, 0.1), -8px -3px 35px -5px rgba(0, 0, 0, 0.1);
+}
+
+.container h2 {
+    text-align: center;
+    margin-top: 25px;
+    padding-top: 70px;
+}
+
+.brand {
+    font-size: 1.2em;
+    text-decoration: none;
+    color: #032030;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.container p {
+    padding: 30px;
+    margin-bottom: -60px;
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        width: 400px;
+    }
+}

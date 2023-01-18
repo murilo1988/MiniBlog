@@ -49,6 +49,13 @@
     .links_list li:nth-last-child(2n) {
         display: none;
     }
+
+    .links_list li {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin-right: 10px;
+    }
 }
 
 @media screen and (max-width: 649px) {

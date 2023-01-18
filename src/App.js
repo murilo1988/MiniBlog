@@ -43,15 +43,19 @@ function App() {
 
     return (
         <div className="App">
+            {loadingUser}
             <AuthProvider value={{ user }}>
                 <BrowserRouter>
                     <NavBar />
 
                     <div className="container">
                         <Routes>
-                            <Route path="/" element={<Login />} />
                             <Route
-                                path="/login"
+                                path="/"
+                                element={user ? <Home /> : <Login />}
+                            />
+                            <Route
+                                path="/"
                                 element={
                                     !user ? <Login /> : <Navigate to="/home" />
                                 }
@@ -68,29 +72,41 @@ function App() {
                             />
                             <Route
                                 path="/home"
-                                element={user ? <Home /> : <Navigate to="/" />}
+                                element={
+                                    user ? <Home /> : <Navigate to="/login" />
+                                }
                             />
                             <Route
                                 path="/about"
-                                element={user ? <About /> : <Navigate to="/" />}
+                                element={
+                                    user ? <About /> : <Navigate to="/login" />
+                                }
                             />
 
                             <Route
                                 path="/post/create"
                                 element={
-                                    user ? <CreatePost /> : <Navigate to="/" />
+                                    user ? (
+                                        <CreatePost />
+                                    ) : (
+                                        <Navigate to="/login" />
+                                    )
                                 }
                             />
                             <Route
                                 path="/dashboard"
                                 element={
-                                    user ? <Dashboard /> : <Navigate to="/" />
+                                    user ? (
+                                        <Dashboard />
+                                    ) : (
+                                        <Navigate to="/login" />
+                                    )
                                 }
                             />
                             <Route
                                 path="/logout"
                                 element={
-                                    user ? <Logout /> : <Navigate to="/" />
+                                    user ? <Logout /> : <Navigate to="/login" />
                                 }
                             />
                         </Routes>
