@@ -4,11 +4,21 @@ import { NavLink } from "react-router-dom";
 
 import { useAuthentication } from "../hooks/useAuthentication";
 import { useAuthValue } from "../context/AuthContext";
+//Hooks
+import { useState } from "react";
+
 //Css
 import styles from "./NavBar.module.css";
+import { FaBars } from "react-icons/fa";
 
 function NavBar() {
     const { user } = useAuthValue();
+
+    const [open, setOpen] = useState(false);
+
+    const handleIsOpen = () => {
+        return setOpen(!open);
+    };
 
     return (
         <nav className={styles.navbar}>
@@ -40,6 +50,22 @@ function NavBar() {
                                 Home
                             </NavLink>
                         </li>
+                        <li className={styles.drop_menu_icon}>
+                            <button>
+                                <NavLink
+                                    to="dropdownlist"
+                                    className={({ isActive }) =>
+                                        isActive
+                                            ? styles.active
+                                            : styles.inactive
+                                    }
+                                >
+                                    <i>
+                                        <FaBars />
+                                    </i>
+                                </NavLink>
+                            </button>
+                        </li>
                         <li>
                             <NavLink
                                 to="/post/create"
@@ -50,6 +76,7 @@ function NavBar() {
                                 Criar Post
                             </NavLink>
                         </li>
+
                         <li>
                             <NavLink
                                 to="/dashboard"

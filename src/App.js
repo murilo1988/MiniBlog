@@ -24,6 +24,7 @@ import styles from "./components/NavBar.module.css";
 //components
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
+import DropdownList from "./components/DropdownList";
 
 function App() {
     const [user, setUser] = useState(undefined);
@@ -107,6 +108,16 @@ function App() {
                                 path="/logout"
                                 element={
                                     user ? <Logout /> : <Navigate to="/login" />
+                                }
+                            />
+                            <Route
+                                path="/dropdownlist"
+                                element={
+                                    user ? (
+                                        <DropdownList />
+                                    ) : (
+                                        <Navigate to="/login" />
+                                    )
                                 }
                             />
                         </Routes>

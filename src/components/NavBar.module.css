@@ -33,6 +33,12 @@
     text-decoration: none;
 }
 
+.drop_menu_icon {
+    margin-top: 6px;
+    padding-left: 15px;
+    display: none;
+}
+
 .active {
     background-color: #3d3d3f;
     color: #e3e6e8;
@@ -45,8 +51,8 @@
     font-size: 1em;
 }
 
-@media screen and (max-width: 480px) {
-    .links_list li:nth-last-child(2n) {
+@media screen and (max-width: 720px) {
+    .links_list li:nth-child(n + 3) {
         display: none;
     }
 
@@ -55,17 +61,5 @@
         justify-content: flex-end;
         align-items: center;
         margin-right: 10px;
-    }
-}
-
-@media screen and (max-width: 649px) {
-    .links_list li:nth-child(3n) {
-        display: none;
-    }
-}
-
-@media screen and (max-width: 670px) {
-    .links_list li:nth-child(4n) {
-        display: none;
     }
 }
