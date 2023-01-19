@@ -1,14 +1,11 @@
 .container {
     height: 50vh;
-    width: 600px;
-    margin: 0 auto;
-    box-shadow: 5px 8px 19px -9px rgba(0, 0, 0, 0.1), -8px -3px 35px -5px rgba(0, 0, 0, 0.1);
 }
 
 .container h2 {
     text-align: center;
-    margin-top: 25px;
-    padding-top: 70px;
+    margin-top: 10px;
+    padding-top: 20px;
 }
 
 .brand {
@@ -22,10 +19,12 @@
 .container p {
     padding: 30px;
     margin-bottom: -60px;
+    text-align: center;
 }
 
 @media screen and (max-width: 480px) {
     .container {
         width: 400px;
+        text-align: center;
     }
 }

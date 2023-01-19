@@ -1,9 +1,11 @@
 .container {
-    height: 60vh;
-    margin-top: 2.8em;
-    border: 1px solid black;
+    height: 65vh;
+    border-radius: 7px;
+    margin: 4em 25px;
+    box-shadow: 5px 8px 19px -9px rgba(0, 0, 0, 0.1), -8px -3px 35px -5px rgba(0, 0, 0, 0.1);
 }
 
 .container > h1 {
     text-align: center;
+    padding-top: 20px;
 }
