@@ -1,9 +1,9 @@
 import React from "react";
-import styles from "./Dashboard.module.css";
+import stylesPattern from "../CSS/pagesIndex.module.css";
 
 function Dashboard() {
     return (
-        <div>
+        <div className={stylesPattern.container}>
             <h1> Dashboard</h1>
         </div>
     );

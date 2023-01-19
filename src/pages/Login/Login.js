@@ -25,10 +25,7 @@ function Login() {
                         placeholder="Senha usuário"
                     />
                 </label>
-                <button
-                    type="submit"
-                    value="Entrar"
-                >
+                <button type="submit" value="Entrar">
                     Entrar
                 </button>
             </form>
@@ -37,3 +34,4 @@ function Login() {
 }
 
 export default Login;
+

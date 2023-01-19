@@ -1,13 +1,14 @@
 import React from "react";
 // CSS
-import styles from "./Home.module.css";
+import stylesPattern from "../CSS/pagesIndex.module.css";
 
 function Home() {
     return (
-        <div>
+        <div className={stylesPattern.container}>
             <h1>Home</h1>
         </div>
     );
 }
 
 export default Home;
+
