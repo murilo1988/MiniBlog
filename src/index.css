@@ -27,11 +27,6 @@ nav button {
   cursor: pointer;
 }
 
-nav button:hover {
-  color: #cfe0f9;
-}
-
-/* error message */
 .container .error {
   background-color: #ff7260e6;
   color: rgb(255, 255, 255);

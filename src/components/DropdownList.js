@@ -6,14 +6,14 @@ function DropdownList() {
     return (
         <>
             <div className={styles.container_dropdown}>
-                <nav className={styles.dropdown_list}>
-                    <ul>
-                        <li>Criar Post</li>
-                        <li>Dashboard</li>
-                        <li>Sobre</li>
-                        <li>Sair</li>
-                    </ul>
-                </nav>
+                <div className={styles.dropdown_itens}>
+                    <nav className={styles.dropdown_list}>
+                        <div>Criar Post</div>
+                        <div>Dashboard</div>
+                        <div>Sobre</div>
+                        <div>Sair</div>
+                    </nav>
+                </div>
             </div>
         </>
     );

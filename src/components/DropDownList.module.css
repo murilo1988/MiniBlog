@@ -1,16 +1,27 @@
 .container_dropdown {
-    border: 1px solid black;
-    margin: 0;
+    display: block;
+    position: absolute;
+    margin: -25px 0;
     padding: 0;
+    width: 100%;
+    top: 100px;
+    right: 1px;
 }
 
-.dropdown_list ul {
+.dropdown_itens {
+    height: 50px;
+}
+
+.dropdown_list {
+    height: 50px;
     display: flex;
     justify-content: space-around;
-    padding: 0 25px;
+    align-items: center;
 }
-.dropdown_list li {
-    list-style: none;
+.dropdown_list div {
+    height: 100%;
+    display: flex;
+    align-items: center;
 }
 
 @media screen and (min-width: 720px) {
