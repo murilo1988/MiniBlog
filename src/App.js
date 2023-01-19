@@ -44,19 +44,21 @@ function App() {
 
     return (
         <div className="App">
-            {loadingUser}
             <AuthProvider value={{ user }}>
                 <BrowserRouter>
                     <NavBar />
 
                     <div className="container">
                         <Routes>
+                            {loadingUser}
                             <Route
                                 path="/"
-                                element={user ? <Home /> : <Login />}
+                                element={
+                                    user ? <Home /> : <Login to="/login" />
+                                }
                             />
                             <Route
-                                path="/"
+                                path="/login"
                                 element={
                                     !user ? <Login /> : <Navigate to="/home" />
                                 }

@@ -29,8 +29,7 @@
 }
 
 .links_list li a {
-    padding: 0.5em 0.7em;
-    text-decoration: none;
+    padding: 0.2em 0.7em;
 }
 
 .drop_menu_icon {
@@ -40,7 +39,7 @@
 }
 
 .active {
-    background-color: #3d3d3f;
+    background-color: #3d3d3fed;
     color: #e3e6e8;
     /* border-radius: 25px 20px; */
     border-radius: 15px 5px;

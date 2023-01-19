@@ -104,7 +104,7 @@ function NavBar() {
                 )}
                 {!user && (
                     <>
-                        <ul>
+                        <ul className={styles.links_list}>
                             <li>
                                 <NavLink
                                     to="/login"
