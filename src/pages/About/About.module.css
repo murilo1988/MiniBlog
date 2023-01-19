@@ -1,11 +1,8 @@
-.container {
-    height: 50vh;
-}
-
-.container h2 {
-    text-align: center;
-    margin-top: 10px;
-    padding-top: 20px;
+.about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .brand {
@@ -16,14 +13,23 @@
     text-transform: uppercase;
 }
 
-.container p {
-    padding: 30px;
-    margin-bottom: -60px;
-    text-align: center;
+.about p {
+    color: #3d3d3fed;
+    padding: 0 25px;
 }
 
+.about button {
+    width: 100px;
+    height: 40px;
+    margin-top: 80px;
+    font-size: 0.8em;
+    background-color: #7dce94;
+    color: #3d3d3f;
+    border: none;
+    box-shadow: 5px 8px 19px -9px rgba(0, 0, 0, 0.29), 8px 10px 5px -5px rgba(0, 0, 0, 0.1);
+}
 @media screen and (max-width: 480px) {
-    .container {
+    .about {
         width: 400px;
         text-align: center;
     }
