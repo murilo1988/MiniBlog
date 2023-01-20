@@ -29,11 +29,12 @@ nav button {
 }
 
 .container .error {
-  background-color: #ff7260e6;
-  color: rgb(255, 255, 255);
-  padding: 8px;
+  background-color: #ff72606b;
+  color: rgb(184, 38, 38);
+  font-size: 0.8em;
+  padding: 5px;
   border-radius: 5px;
   text-align: center;
-  width: 60%;
-  margin: 15px auto;
+  width: auto;
+  margin: -10px auto;
 }

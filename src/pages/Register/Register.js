@@ -105,6 +105,7 @@ function Register() {
                         onChange={(e) => setConfirmpassoword(e.target.value)}
                     />
                 </label>
+                {error && <p className="error">{error}</p>}
                 {!loading && (
                     <button
                         className={styles.form_cadastrar__btn}
@@ -124,8 +125,6 @@ function Register() {
                         Aguarde...
                     </button>
                 )}
-
-                {error && <p className="error">{error}</p>}
             </form>
         </div>
     );

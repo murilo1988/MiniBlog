@@ -59,13 +59,13 @@ const Login = () => {
                         value={password}
                     />
                 </label>
+                {error && <p className="error">{error}</p>}
                 {!loading && <button className="btn">Entrar</button>}
                 {loading && (
                     <button className="btn" disabled>
                         Aguarde...
                     </button>
                 )}
-                {error && <p className="error">{error}</p>}
             </form>
         </div>
     );
