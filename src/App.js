@@ -15,11 +15,9 @@ import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import CreatePost from "./pages/CreatePost/CreatePost";
 import Dashboard from "./pages/Dashboard/Dashboard";
-import Logout from "./pages/Logout/Logout";
 
 // CSS
 import "./App.css";
-import styles from "./components/NavBar.module.css";
 
 //components
 import NavBar from "./components/NavBar";
@@ -106,12 +104,7 @@ function App() {
                                     )
                                 }
                             />
-                            <Route
-                                path="/logout"
-                                element={
-                                    user ? <Logout /> : <Navigate to="/login" />
-                                }
-                            />
+
                             <Route
                                 path="/dropdownlist"
                                 element={

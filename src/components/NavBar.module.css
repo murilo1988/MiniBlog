@@ -62,3 +62,7 @@
         margin-right: 10px;
     }
 }
+
+.drop_transition {
+    transition: 3s;
+}

@@ -19,9 +19,12 @@ function NavBar() {
 
     const [open, setOpen] = useState(false);
 
+    const { logout } = useAuthentication();
+
     const handleIsOpen = () => {
-        return setOpen(!open);
+        setOpen(!open);
     };
+
     console.log(open);
     return (
         <nav className={styles.navbar}>
@@ -58,7 +61,15 @@ function NavBar() {
                                 <FaBars />
                             </button>
                         </li>
-                        <div>{open && <DropdownList />}</div>
+
+                        <div>
+                            {open && (
+                                <DropdownList
+                                    className={styles.drop_transition}
+                                />
+                            )}
+                        </div>
+
                         <li>
                             <NavLink
                                 to="/post/create"
@@ -91,13 +102,17 @@ function NavBar() {
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink
-                                to="/logout"
-                                className={({ isActive }) =>
-                                    isActive ? styles.active : styles.inactive
-                                }
-                            >
-                                Sair
+                            <NavLink to="/login">
+                                <button
+                                    onClick={logout}
+                                    className={({ isActive }) =>
+                                        isActive
+                                            ? styles.active
+                                            : styles.inactive
+                                    }
+                                >
+                                    Sair
+                                </button>
                             </NavLink>
                         </li>
                     </>

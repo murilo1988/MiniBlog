@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 
 import { NavLink } from "react-router-dom";
+import { useAuthentication } from "../hooks/useAuthentication";
 
 //CSS
 import styles from "./DropDownList.module.css";
 
 function DropdownList() {
+    const { logout } = useAuthentication();
     return (
         <>
             <div className={styles.container_dropdown}>
@@ -43,14 +45,14 @@ function DropdownList() {
                             </NavLink>
                         </div>
                         <div>
-                            <NavLink
-                                to="/logout"
+                            <button
+                                onClick={logout}
                                 className={({ isActive }) =>
                                     isActive ? styles.active : styles.inactive
                                 }
                             >
                                 Sair
-                            </NavLink>
+                            </button>
                         </div>
                     </nav>
                 </div>
