@@ -15,7 +15,7 @@
 }
 
 label {
-    height: 2em;
+    height: 2.3em;
     display: grid;
     grid-template-columns: 150px 400px;
     justify-content: space-between;
@@ -28,6 +28,7 @@ label span {
     justify-content: flex-end;
     align-items: center;
     padding-right: 25px;
+    margin-right: 3%;
 }
 
 label:nth-child(4) {
@@ -35,7 +36,7 @@ label:nth-child(4) {
 }
 
 label input {
-    height: 80%;
+    height: 90%;
     margin-left: -20px;
     display: flex;
     justify-content: flex-start;
@@ -45,16 +46,16 @@ label input {
     border: none;
     font-size: 0.8em;
     box-shadow: inset 15px -13px 3px -15px rgba(0, 0, 0, 0.206), inset -3px 2px 3px -2px rgba(0, 0, 0, 0.1);
-    color: rgba(0, 0, 0, 0.034);
+    color: rgb(0, 0, 0);
 }
 
 label textarea {
-    font-size: 0.8em;
+    font-size: 1em;
     border: none;
     padding-left: 10px;
     margin-left: -20px;
     box-shadow: inset 15px -13px 3px -15px rgba(0, 0, 0, 0.206), inset -3px 2px 3px -2px rgba(0, 0, 0, 0.1);
-    color: rgba(0, 0, 0, 0.034);
+    color: rgb(0, 0, 0);
     resize: none;
 }
 
@@ -104,9 +105,10 @@ label textarea {
     }
 
     label span {
+        width: 90%;
         display: flex;
         justify-content: flex-start;
         margin-bottom: 5px;
-        margin-left: 8px;
+        margin-left: 2%;
     }
 }

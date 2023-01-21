@@ -1,6 +1,6 @@
 {
     "bracketSpacing": true,
-    "endOfLine": "crlf",
+    "endOfLine": "lf",
     "arrowParens": "always",
     "tabWidth": 4,
     "trailingComma": "all"

@@ -1,11 +1,10 @@
-import React from "react";
-
 import styles from "./CreatePost.module.css";
 import stylesPattern from "../CSS/pagesIndex.module.css";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Navigate } from "react-router-dom";
 import { useAuthValue } from "../../context/AuthContext";
+import { useAuthentication } from "../../hooks/useAuthentication";
 
 export default function CreatePost() {
     const [title, setTitle] = useState("");
@@ -14,9 +13,19 @@ export default function CreatePost() {
     const [tags, setTags] = useState([]);
     const [formError, setFormError] = useState("");
 
+    const { login, error: authError, error, loading } = useAuthentication();
+
+    const searchInput = useRef(null);
+    useEffect(() => {
+        searchInput.current.focus();
+    }, []);
+
     const handleSubmit = (e) => {
         e.preventDefault();
     };
+
+    console.log(searchInput);
+
     return (
         <div className={stylesPattern.container}>
             <h1>Criar post</h1>
@@ -48,6 +57,7 @@ export default function CreatePost() {
                     <label>
                         <span>Conteúdo:</span>
                         <textarea
+                            ref={searchInput}
                             rows="3"
                             type="text"
                             name="body"
@@ -67,7 +77,9 @@ export default function CreatePost() {
                             value={tags}
                         />
                     </label>
-                    <button>Postar</button>
+                    {!loading && <button>Postar</button>}
+                    {loading && <button>Aguarde..</button>}
+                    {error && <p className="error"> {error}</p>}
                 </form>
             </div>
         </div>
