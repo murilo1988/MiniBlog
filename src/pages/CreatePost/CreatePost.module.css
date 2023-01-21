@@ -1,0 +1,112 @@
+/* * {
+    border: 1px solid black;
+} */
+.container_post p {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.container_post form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1em;
+}
+
+label {
+    height: 2em;
+    display: grid;
+    grid-template-columns: 150px 400px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+label span {
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 25px;
+}
+
+label:nth-child(4) {
+    margin-top: 25px;
+}
+
+label input {
+    height: 80%;
+    margin-left: -20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 10px;
+
+    border: none;
+    font-size: 0.8em;
+    box-shadow: inset 15px -13px 3px -15px rgba(0, 0, 0, 0.206), inset -3px 2px 3px -2px rgba(0, 0, 0, 0.1);
+    color: rgba(0, 0, 0, 0.034);
+}
+
+label textarea {
+    font-size: 0.8em;
+    border: none;
+    padding-left: 10px;
+    margin-left: -20px;
+    box-shadow: inset 15px -13px 3px -15px rgba(0, 0, 0, 0.206), inset -3px 2px 3px -2px rgba(0, 0, 0, 0.1);
+    color: rgba(0, 0, 0, 0.034);
+    resize: none;
+}
+
+.container_post button {
+    width: 100px;
+    height: 40px;
+    margin-top: 40px;
+    font-size: 0.8em;
+    background-color: #7dce94;
+    color: #3d3d3f;
+    border: none;
+    box-shadow: 5px 8px 19px -9px rgba(0, 0, 0, 0.29), 8px 10px 5px -5px rgba(0, 0, 0, 0.1);
+}
+
+.container_post button:active {
+    transform: translateY(2px);
+    box-shadow: none;
+}
+
+.container_post button[disabled] {
+    background-color: #7dce9470;
+    transform: translateY(none);
+    color: rgba(93, 93, 93, 0.553);
+    box-shadow: inset 15px 15px 4px -14px rgba(0, 0, 0, 0.1), 5px 1px 6px -9px rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (max-width: 650px) {
+    label {
+        display: grid;
+        justify-content: center;
+        grid-template-columns: 1fr;
+        width: 90%;
+        height: 3em;
+        margin-bottom: 2em;
+    }
+
+    label input {
+        width: 90%;
+        padding: 0.28em 10px;
+        margin: 15px auto;
+    }
+
+    label textarea {
+        width: 90%;
+        padding: 0.28em 10px;
+        margin: 0 auto;
+    }
+
+    label span {
+        display: flex;
+        justify-content: flex-start;
+        margin-bottom: 5px;
+        margin-left: 8px;
+    }
+}
