@@ -2,6 +2,7 @@ import React from "react";
 
 //CSS
 import styles from "./Register.module.css";
+import stylesAll from "../CSS/pagesIndex.module.css";
 
 // hooks
 import { useState, useEffect } from "react";
@@ -57,78 +58,72 @@ function Register() {
     }, [authError]);
 
     return (
-        <div className={styles.container_form}>
+        <div className={stylesAll.container}>
             <h1> Cadastre-se para postar</h1>
-            <form className={styles.form_cadastrar} onSubmit={handleSubmit}>
-                <label>
-                    <span>Nome:</span>
-                    <input
-                        type="text"
-                        name="displayName"
-                        required
-                        placeholder="Nome do usuário"
-                        value={displayName}
-                        onChange={(e) => setDisplayName(e.target.value)}
-                    />
-                </label>
-                <label>
-                    <span>E-mail:</span>
-                    <input
-                        type="email"
-                        name="email"
-                        required
-                        placeholder="E-mail do usuário"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                    />
-                </label>
+            <div className={styles.container_register}>
+                <form onSubmit={handleSubmit}>
+                    <label>
+                        <span>Nome:</span>
+                        <input
+                            type="text"
+                            name="displayName"
+                            required
+                            placeholder="Nome do usuário"
+                            value={displayName}
+                            onChange={(e) => setDisplayName(e.target.value)}
+                        />
+                    </label>
+                    <label>
+                        <span>E-mail:</span>
+                        <input
+                            type="email"
+                            name="email"
+                            required
+                            placeholder="E-mail do usuário"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                        />
+                    </label>
 
-                <label>
-                    <span>Senha:</span>
-                    <input
-                        type="password"
-                        name="password"
-                        required
-                        placeholder="Senha do usuário"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                    />
-                </label>
-                <label>
-                    <span>Confirme:</span>
-                    <input
-                        type="password"
-                        name="confirmpassoword"
-                        required
-                        placeholder="Confirme sua senha"
-                        value={confirmPassword}
-                        onChange={(e) => setConfirmpassoword(e.target.value)}
-                    />
-                </label>
-                {error && <p className="error">{error}</p>}
-                {!loading && (
-                    <button
-                        className={styles.form_cadastrar__btn}
-                        type="Submit"
-                        value="Cadastrar"
-                    >
-                        Cadastrar
-                    </button>
-                )}
-                {loading && (
-                    <button
-                        className={styles.form_cadastrar__btn}
-                        disabled
-                        type="Submit"
-                        value="Cadastrar"
-                    >
-                        Aguarde...
-                    </button>
-                )}
-            </form>
+                    <label>
+                        <span>Senha:</span>
+                        <input
+                            type="password"
+                            name="password"
+                            required
+                            placeholder="Senha do usuário"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                        />
+                    </label>
+                    <label>
+                        <span>Confirme:</span>
+                        <input
+                            type="password"
+                            name="confirmpassoword"
+                            required
+                            placeholder="Confirme sua senha"
+                            value={confirmPassword}
+                            onChange={(e) =>
+                                setConfirmpassoword(e.target.value)
+                            }
+                        />
+                    </label>
+                    {error && <p className="error">{error}</p>}
+                    {!loading && (
+                        <button type="Submit" value="Cadastrar">
+                            Cadastrar
+                        </button>
+                    )}
+                    {loading && (
+                        <button disabled type="Submit" value="Cadastrar">
+                            Aguarde...
+                        </button>
+                    )}
+                </form>
+            </div>
         </div>
     );
 }
 
 export default Register;
-

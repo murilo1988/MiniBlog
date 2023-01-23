@@ -1,53 +1,46 @@
-.container_form {
-    margin: auto 150px;
-    height: 70vh;
-    width: 600px;
-    margin: 0 auto;
-    box-shadow: 5px 8px 19px -9px rgba(0, 0, 0, 0.1), -8px -3px 35px -5px rgba(0, 0, 0, 0.1);
-}
-
-.container_form h1 {
-    text-align: center;
-    margin-top: 25px;
-    padding-top: 20px;
-}
-
-.form_cadastrar {
+.container_register form {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 20px;
-    font-size: 1.2em;
+    font-size: 1em;
+    margin-top: 4em;
 }
 
-label {
+.container_register label {
     display: grid;
-    grid-template-columns: 70px 300px;
+    grid-template-columns: 150px 400px;
+    justify-content: space-between;
     align-items: center;
-    margin-bottom: 30px;
+    height: 3em;
+    margin-bottom: 2.5em;
 }
 
-.form_cadastrar span {
+label span {
+    height: 100%;
     display: flex;
     justify-content: flex-end;
-    margin-right: 10px;
+    align-items: center;
+    padding-right: 25px;
+    margin-right: 3%;
 }
 
-.form_cadastrar input {
+.container_register label input {
+    height: 70%;
+    width: 90%;
+    margin-left: -20px;
+    padding: 0.28em 10px;
     display: flex;
     justify-content: flex-start;
-    align-items: baseline;
-    width: 250px;
+    align-items: center;
+
     border: none;
-    padding: 10px;
-    font-size: 0.7em;
-    box-shadow: inset 15px 5px 4px -14px rgba(0, 0, 0, 0.1), 5px 1px 6px -9px rgba(0, 0, 0, 0.1);
-    color: rgba(0, 0, 0, 0.471);
+    font-size: 0.8em;
+    box-shadow: inset 15px -13px 3px -15px rgba(0, 0, 0, 0.206), inset -3px 2px 3px -2px rgba(0, 0, 0, 0.1);
+    color: rgb(0, 0, 0);
 }
 
-.form_cadastrar button {
-    cursor: pointer;
+.container_register button {
     width: 100px;
     height: 40px;
     margin-top: 40px;
@@ -58,45 +51,46 @@ label {
     box-shadow: 5px 8px 19px -9px rgba(0, 0, 0, 0.29), 8px 10px 5px -5px rgba(0, 0, 0, 0.1);
 }
 
-.form_cadastrar button[disabled] {
+.container_register button:active {
+    transform: translateY(2px);
+    box-shadow: none;
+}
+
+.container_register button[disabled] {
     background-color: #7dce9470;
     transform: translateY(none);
     color: rgba(93, 93, 93, 0.553);
     box-shadow: inset 15px 15px 4px -14px rgba(0, 0, 0, 0.1), 5px 1px 6px -9px rgba(0, 0, 0, 0.1);
 }
 
-.form_cadastrar button:active {
-    transform: translateY(2px);
-    box-shadow: none;
-}
-
 @media screen and (max-width: 650px) {
-    .container_form {
-        width: 300px;
-        margin: 0 auto;
-        height: 85vh;
-    }
-
-    h1 {
-        margin-bottom: 35px;
-        font-size: 1.6em;
-    }
-
-    label {
+    .container_register label {
         display: grid;
-        grid-template-columns: 1fr;
-        align-items: center;
         justify-content: center;
+        grid-template-columns: 1fr;
+        width: 90%;
+        height: 3em;
+        margin-bottom: 2.5em;
     }
 
-    .form_cadastrar span {
+    .container_register label input {
+        width: 90%;
+        height: 80%;
+        padding: 0.28em 10px;
+        margin: 15px auto;
+    }
+
+    label textarea {
+        width: 90%;
+        padding: 0.28em 10px;
+        margin: 0 auto;
+    }
+
+    label span {
+        width: 90%;
         display: flex;
         justify-content: flex-start;
-        margin-left: 3px;
         margin-bottom: 5px;
-    }
-
-    .form_cadastrar input {
-        width: 230px;
+        margin-left: 2%;
     }
 }
