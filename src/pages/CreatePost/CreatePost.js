@@ -1,44 +1,83 @@
 import styles from "./CreatePost.module.css";
 import stylesPattern from "../CSS/pagesIndex.module.css";
 
-import { useState, useRef, useEffect } from "react";
-import { Navigate } from "react-router-dom";
+import { useState } from "react";
+import { useInsertDocument } from "../../hooks/useInsertDocument";
+import { useNavigate } from "react-router-dom";
 import { useAuthValue } from "../../context/AuthContext";
-import { useAuthentication } from "../../hooks/useAuthentication";
 
-export default function CreatePost() {
+const CreatePost = () => {
     const [title, setTitle] = useState("");
     const [image, setImage] = useState("");
     const [body, setBody] = useState("");
     const [tags, setTags] = useState([]);
     const [formError, setFormError] = useState("");
 
-    const { login, error: authError, error, loading } = useAuthentication();
+    const { user } = useAuthValue();
 
-    const searchInput = useRef(null);
-    useEffect(() => {
-        searchInput.current.focus();
-    }, []);
+    const navigate = useNavigate();
+
+    const { insertDocument, response } = useInsertDocument("posts");
 
     const handleSubmit = (e) => {
         e.preventDefault();
-    };
+        setFormError("");
 
-    console.log(searchInput);
+        // validate image
+        try {
+            new URL(image);
+        } catch (error) {
+            setFormError("A imagem precisa ser uma URL.");
+        }
+
+        // create tags array
+        const tagsArray = tags
+            .split(",")
+            .map((tag) => tag.trim().toLowerCase());
+
+        // check values
+        if (!title || !image || !tags || !body) {
+            setFormError("Por favor, preencha todos os campos!");
+        }
+
+        console.log(tagsArray);
+
+        console.log({
+            title,
+            image,
+            body,
+            tags: tagsArray,
+            uid: user.uid,
+            createdBy: user.displayName,
+        });
+
+        if (formError) return;
+
+        insertDocument({
+            title,
+            image,
+            body,
+            tags: tagsArray,
+            uid: user.uid,
+            createdBy: user.displayName,
+        });
+
+        // redirect to home page
+        navigate("/");
+    };
 
     return (
         <div className={stylesPattern.container}>
             <h1>Criar post</h1>
             <div className={styles.container_post}>
-                <p>Compartilhe seus momentos </p>
                 <form onSubmit={handleSubmit}>
                     <label>
-                        <span>Titulo:</span>
+                        <span>Título:</span>
                         <input
                             type="text"
-                            name="title"
+                            name="text"
                             required
-                            placeholder="Título da postagem"
+                            placeholder="Pense num bom título..."
                             onChange={(e) => setTitle(e.target.value)}
                             value={title}
                         />
@@ -49,7 +88,7 @@ export default function CreatePost() {
                             type="text"
                             name="image"
                             required
-                            placeholder="Imagem da postagem"
+                            placeholder="Insira uma imagem que representa seu post"
                             onChange={(e) => setImage(e.target.value)}
                             value={image}
                         />
@@ -57,31 +96,33 @@ export default function CreatePost() {
                     <label>
                         <span>Conteúdo:</span>
                         <textarea
-                            ref={searchInput}
-                            rows="3"
-                            type="text"
                             name="body"
                             required
-                            placeholder="Insirao contúdo do post"
+                            placeholder="Insira o conteúdo do post"
                             onChange={(e) => setBody(e.target.value)}
+                            value={body}
                         ></textarea>
                     </label>
                     <label>
-                        <span>Maque suas tags</span>
+                        <span>Tags:</span>
                         <input
                             type="text"
                             name="tags"
                             required
-                            placeholder="Crie suas tags"
+                            placeholder="Insira as tags separadas por vírgula"
                             onChange={(e) => setTags(e.target.value)}
                             value={tags}
                         />
                     </label>
-                    {!loading && <button>Postar</button>}
-                    {loading && <button>Aguarde..</button>}
-                    {error && <p className="error"> {error}</p>}
+                    {!response.loading && <button>Criar post!</button>}
+                    {response.loading && <button disabled>Aguarde.. .</button>}
+                    {(response.error || formError) && (
+                        <p className="error">{response.error || formError}</p>
+                    )}
                 </form>
             </div>
         </div>
     );
-}
+};
+
+export default CreatePost;
