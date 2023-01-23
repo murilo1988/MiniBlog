@@ -27,7 +27,7 @@ const CreatePost = () => {
         try {
             new URL(image);
         } catch (error) {
-            setFormError("A imagem precisa ser uma URL.");
+            return setFormError("A imagem precisa ser uma URL.");
         }
 
         // create tags array
@@ -39,25 +39,14 @@ const CreatePost = () => {
         if (!title || !image || !tags || !body) {
             setFormError("Por favor, preencha todos os campos!");
         }
-
-        console.log(tagsArray);
-
-        console.log({
-            title,
-            image,
-            body,
-            tags: tagsArray,
-            uid: user.uid,
-            createdBy: user.displayName,
-        });
-
+        console.log(formError);
         if (formError) return;
 
         insertDocument({
             title,
             image,
             body,
-            tags: tagsArray,
+            tagsArray,
             uid: user.uid,
             createdBy: user.displayName,
         });
@@ -74,7 +63,6 @@ const CreatePost = () => {
                     <label>
                         <span>Título:</span>
                         <input
-                            type="text"
                             name="text"
                             required
                             placeholder="Pense num bom título..."
@@ -114,11 +102,14 @@ const CreatePost = () => {
                             value={tags}
                         />
                     </label>
-                    {!response.loading && <button>Criar post!</button>}
-                    {response.loading && <button disabled>Aguarde.. .</button>}
                     {(response.error || formError) && (
                         <p className="error">{response.error || formError}</p>
                     )}
+                    {!response.loading && <button>Criar post!</button>}
+                    {response.loading && <button disabled>Aguarde.. .</button>}
+                    {console.log(response.loading)}
+                    {console.log(response.error)}
+                    {console.log(formError)}
                 </form>
             </div>
         </div>

@@ -67,6 +67,7 @@
     font-size: 0.8em;
     background-color: #7dce94;
     color: #3d3d3f;
+    margin-bottom: 40px;
     border: none;
     box-shadow: 5px 8px 19px -9px rgba(0, 0, 0, 0.29), 8px 10px 5px -5px rgba(0, 0, 0, 0.1);
 }
@@ -77,7 +78,7 @@
 }
 
 .container_post button[disabled] {
-    background-color: #7dce9470;
+    background-color: #b5b5b570;
     transform: translateY(none);
     color: rgba(93, 93, 93, 0.553);
     box-shadow: inset 15px 15px 4px -14px rgba(0, 0, 0, 0.1), 5px 1px 6px -9px rgba(0, 0, 0, 0.1);
