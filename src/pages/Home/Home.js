@@ -7,14 +7,21 @@ import { AiOutlineSearch } from "react-icons/ai";
 //hookes
 import { useNavigate, Link } from "react-router-dom";
 import { useState } from "react";
+import { useFetchDocuments } from "../../hooks/useFetchDocuments";
+
+// Components
+import PostDetail from "../../components/PostDetail";
 
 function Home() {
     const [query, setQuery] = useState("");
-    const [posts] = useState([]);
+    const { documents: posts, loading } = useFetchDocuments("posts");
 
     const handleSubmit = (e) => {
         e.preventDefautl();
     };
+
+    console.log(loading);
+    console.log(posts);
     return (
         <div className={stylesPattern.container}>
             <h1>Postagens mais recentes</h1>
@@ -33,8 +40,14 @@ function Home() {
                     </label>
                 </form>
                 <div className={styles.posts_home}>
-                    <h2>Posts</h2>
-                    {!posts && posts.length === 0 && (
+                    {loading && <p>Carregando..</p>}
+
+                    {posts &&
+                        posts.map((post) => (
+                            <PostDetail key={post.id} post={post} />
+                        ))}
+
+                    {posts && posts.length === 0 && (
                         <div className={styles.no_posts}>
                             <p> Não foram encontrados posts</p>
                             <Link to="/post/create">
