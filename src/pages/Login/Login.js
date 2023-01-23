@@ -1,4 +1,5 @@
 import styles from "./Login.module.css";
+import stylesAll from "../CSS/pagesIndex.module.css";
 
 import { useEffect, useState } from "react";
 import { useAuthentication } from "../../hooks/useAuthentication";
@@ -33,43 +34,39 @@ const Login = () => {
     }, [authError]);
 
     return (
-        <div className={styles.container_login}>
+        <div className={stylesAll.container}>
             <h1>Entrar</h1>
-
-            <form className={styles.form_login} onSubmit={handleSubmit}>
-                <label>
-                    <span>E-mail:</span>
-                    <input
-                        type="email"
-                        name="email"
-                        required
-                        placeholder="E-mail do usuário"
-                        onChange={(e) => setEmail(e.target.value)}
-                        value={email}
-                    />
-                </label>
-                <label>
-                    <span>Senha:</span>
-                    <input
-                        type="password"
-                        name="password"
-                        required
-                        placeholder="Insira a senha"
-                        onChange={(e) => setPassword(e.target.value)}
-                        value={password}
-                    />
-                </label>
-                {error && <p className="error">{error}</p>}
-                {!loading && <button className="btn">Entrar</button>}
-                {loading && (
-                    <button className="btn" disabled>
-                        Aguarde...
-                    </button>
-                )}
-            </form>
+            <div className={styles.container_login}>
+                <form onSubmit={handleSubmit}>
+                    <label>
+                        <span>E-mail:</span>
+                        <input
+                            type="email"
+                            name="email"
+                            required
+                            placeholder="E-mail do usuário"
+                            onChange={(e) => setEmail(e.target.value)}
+                            value={email}
+                        />
+                    </label>
+                    <label>
+                        <span>Senha:</span>
+                        <input
+                            type="password"
+                            name="password"
+                            required
+                            placeholder="Insira a senha"
+                            onChange={(e) => setPassword(e.target.value)}
+                            value={password}
+                        />
+                    </label>
+                    {error && <p className="error">{error}</p>}
+                    {!loading && <button>Entrar</button>}
+                    {loading && <button disabled>Aguarde...</button>}
+                </form>
+            </div>
         </div>
     );
 };
 
 export default Login;
-
