@@ -15,7 +15,7 @@ function About() {
             <div className={styles.about}>
                 <p>
                     Este projeto foi criado com o intuito de Criar e controlar
-                    as postagens de fotos comentário e likes{" "}
+                    as postagens de fotos, comentário e likes{" "}
                 </p>
                 <p>
                     Ele utiliza JavaScript com React no front-end e Firebase no
@@ -30,4 +30,3 @@ function About() {
 }
 
 export default About;
-
