@@ -23,6 +23,7 @@ import "./App.css";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import DropdownList from "./components/DropdownList";
+import Search from "./pages/Search/Search";
 
 function App() {
     const [user, setUser] = useState(undefined);
@@ -95,6 +96,12 @@ function App() {
                                 }
                             />
                             <Route
+                                path="/search"
+                                element={
+                                    user ? <Search /> : <Navigate to="/login" />
+                                }
+                            />
+                            <Route
                                 path="/dashboard"
                                 element={
                                     user ? (
@@ -125,4 +132,3 @@ function App() {
 }
 
 export default App;
-
