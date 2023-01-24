@@ -4,8 +4,6 @@ import { useState, useEffect } from "react";
 // db
 import { db } from "../firebase/config";
 
-import { useReducer } from "react";
-
 import {
     collection,
     query,
@@ -34,7 +32,18 @@ export const useFetchDocuments = (
 
             try {
                 let q;
-                q = await query(collectionRef, orderBy("createdAt", "desc"));
+                if (search) {
+                    q = await query(
+                        collectionRef,
+                        where("tagsArray", "array-contains", search),
+                        orderBy("createdAt", "desc"),
+                    );
+                } else {
+                    q = await query(
+                        collectionRef,
+                        orderBy("createdAt", "desc"),
+                    );
+                }
 
                 await onSnapshot(q, (querySnapshot) => {
                     setDocuments(
