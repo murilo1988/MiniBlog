@@ -28,6 +28,7 @@ function Search() {
                         <h4>
                             Não foram encontrados posts a partir de sua busca..
                         </h4>
+
                         <button>
                             <Link to="/">voltar</Link>
                         </button>

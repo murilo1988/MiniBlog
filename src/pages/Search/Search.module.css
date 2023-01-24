@@ -1,5 +1,6 @@
 .container_search {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -11,13 +12,19 @@
 .container_search button {
     display: flex;
     justify-content: center;
+    align-items: center;
     background-color: #7dce94;
-    width: 30%;
+    width: 100px;
+    height: 40px;
     color: #3d3d3f;
     font-size: 1.2em;
     margin-top: 40px;
     border: none;
     box-shadow: 5px 8px 19px -9px rgba(0, 0, 0, 0.29), 8px 10px 5px -5px rgba(0, 0, 0, 0.1);
+}
+.container_search button:active {
+    transform: translateY(2px);
+    box-shadow: none;
 }
 
 .container_search p {

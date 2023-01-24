@@ -102,17 +102,14 @@ function NavBar() {
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink to="/login">
-                                <button
-                                    onClick={logout}
-                                    className={({ isActive }) =>
-                                        isActive
-                                            ? styles.active
-                                            : styles.inactive
-                                    }
-                                >
-                                    Sair
-                                </button>
+                            <NavLink
+                                to="/login"
+                                onClick={logout}
+                                className={({ isActive }) =>
+                                    isActive ? styles.active : styles.inactive
+                                }
+                            >
+                                Sair
                             </NavLink>
                         </li>
                     </>
@@ -153,4 +150,3 @@ function NavBar() {
 }
 
 export default NavBar;
-

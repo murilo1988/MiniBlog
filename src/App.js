@@ -15,6 +15,7 @@ import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import CreatePost from "./pages/CreatePost/CreatePost";
 import Dashboard from "./pages/Dashboard/Dashboard";
+import Post from "./pages/Post/Post";
 
 // CSS
 import "./App.css";
@@ -49,7 +50,6 @@ function App() {
 
                     <div className="container">
                         <Routes>
-                            {loadingUser}
                             <Route
                                 path="/"
                                 element={
@@ -84,6 +84,12 @@ function App() {
                                     user ? <About /> : <Navigate to="/login" />
                                 }
                             />
+                            <Route
+                                path="/search"
+                                element={
+                                    user ? <Search /> : <Navigate to="/login" />
+                                }
+                            />
 
                             <Route
                                 path="/post/create"
@@ -95,10 +101,11 @@ function App() {
                                     )
                                 }
                             />
+
                             <Route
-                                path="/search"
+                                path="/post/:id"
                                 element={
-                                    user ? <Search /> : <Navigate to="/login" />
+                                    user ? <Post /> : <Navigate to="/login" />
                                 }
                             />
                             <Route

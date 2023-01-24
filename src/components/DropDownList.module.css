@@ -18,6 +18,7 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    box-shadow: 0px 17px 7px -13px rgba(0, 0, 0, 0.1);
 }
 .dropdown_list div {
     height: 100%;
