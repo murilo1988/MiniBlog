@@ -7,12 +7,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 20px;
+    margin-bottom: 60px;
 }
 
 .container_home label {
     display: grid;
-    grid-template-columns: 300px 50px;
+    grid-template-columns: 340px 50px;
     justify-content: center;
     align-items: center;
     height: 2.3em;
@@ -67,9 +67,13 @@
 }
 
 @media screen and (max-width: 650px) {
+    .container_home {
+        width: 100%;
+    }
     .container_home label {
         display: grid;
-        grid-template-columns: 200px 50px;
+        gap: 5px;
+        grid-template-columns: 240px 50px;
     }
 
     .container_home label input {
