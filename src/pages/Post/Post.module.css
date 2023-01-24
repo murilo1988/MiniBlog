@@ -1,0 +1,11 @@
+.container_body {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 0 auto;
+    width: 80%;
+    height: 80%;
+}
+
+.container_body p {
+    text-align: left;
+}
