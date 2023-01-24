@@ -1,0 +1,30 @@
+.container_search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container_search img {
+    max-width: 400px;
+}
+
+.container_search button {
+    display: flex;
+    justify-content: center;
+    background-color: #7dce94;
+    width: 30%;
+    color: #3d3d3f;
+    font-size: 1.2em;
+    margin-top: 40px;
+    border: none;
+    box-shadow: 5px 8px 19px -9px rgba(0, 0, 0, 0.29), 8px 10px 5px -5px rgba(0, 0, 0, 0.1);
+}
+
+.container_search p {
+    display: none;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.8em 1em;
+    margin-top: -10p;
+}
