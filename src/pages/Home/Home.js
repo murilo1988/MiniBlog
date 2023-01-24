@@ -4,8 +4,8 @@ import stylesPattern from "../CSS/pagesIndex.module.css";
 import styles from "./Home.module.css";
 import { AiOutlineSearch } from "react-icons/ai";
 
-//hookes
 import { useNavigate, Link } from "react-router-dom";
+//hookes
 import { useState } from "react";
 import { useFetchDocuments } from "../../hooks/useFetchDocuments";
 
@@ -16,8 +16,13 @@ function Home() {
     const [query, setQuery] = useState("");
     const { documents: posts, loading } = useFetchDocuments("posts");
 
+    const navigate = useNavigate();
+
     const handleSubmit = (e) => {
-        e.preventDefautl();
+        e.preventDefault();
+        if (query) {
+            return navigate(`/search?q=${query}`);
+        }
     };
 
     console.log(loading);
@@ -34,9 +39,16 @@ function Home() {
                             onChange={(e) => setQuery(e.target.value)}
                             value={query}
                         />
-                        <button>
-                            <AiOutlineSearch />
-                        </button>
+                        {!loading && (
+                            <button>
+                                <AiOutlineSearch />
+                            </button>
+                        )}
+                        {loading && (
+                            <button disabled>
+                                <AiOutlineSearch />
+                            </button>
+                        )}
                     </label>
                 </form>
                 <div className={styles.posts_home}>
