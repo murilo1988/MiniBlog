@@ -19,6 +19,7 @@ function Search() {
     const search = query.get("q");
 
     const { documents: posts } = useFetchDocuments("posts", search);
+
     return (
         <div className={stylesPattern.container}>
             <h1>Search</h1>
@@ -29,9 +30,9 @@ function Search() {
                             Não foram encontrados posts a partir de sua busca..
                         </h4>
 
-                        <button>
-                            <Link to="/">voltar</Link>
-                        </button>
+                        <Link to="/">
+                            <button>voltar</button>
+                        </Link>
                     </>
                 )}
                 {posts &&

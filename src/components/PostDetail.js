@@ -30,9 +30,9 @@ function PostDetail({ post }) {
                             ))}
                         </ul>
                     </div>
-                    <button>
-                        <Link to={`/post/${post.id}`}>Ler</Link>
-                    </button>
+                    <Link to={`/post/${post.id}`}>
+                        <button>Ler</button>
+                    </Link>
                 </div>
             </div>
         </>

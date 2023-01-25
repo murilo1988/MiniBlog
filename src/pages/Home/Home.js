@@ -14,7 +14,7 @@ import PostDetail from "../../components/PostDetail";
 
 function Home() {
     const [query, setQuery] = useState("");
-    const { documents: posts, loading } = useFetchDocuments("posts");
+    const { documents: posts, loading, error } = useFetchDocuments("posts");
 
     const navigate = useNavigate();
 
@@ -51,6 +51,7 @@ function Home() {
                         )}
                     </label>
                 </form>
+
                 <div className={styles.posts_home}>
                     {loading && <p>Carregando..</p>}
 

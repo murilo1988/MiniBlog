@@ -33,11 +33,12 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    height: 40px;
     border: none;
-    height: 95%;
+
     background-color: #7dce94;
     color: #2e2e2f;
-    font-size: 1.2em;
+    font-size: 1em;
     box-shadow: 5px 8px 19px -9px rgba(0, 0, 0, 0.29), 8px 10px 5px -5px rgba(0, 0, 0, 0.1);
 }
 
