@@ -6,21 +6,25 @@ import { Link } from "react-router-dom";
 
 //hooks
 import { useAuthValue } from "../../context/AuthContext";
-import { useFeychDocuments } from "../../hooks/useFetchDocuments";
+import { useFetchDocuments } from "../../hooks/useFetchDocuments";
 
 function Dashboard() {
     const { user } = useAuthValue();
     const uid = user.id;
 
-    // posts do usuário
+    const {
+        documents: posts,
+        loading,
+        error,
+    } = useFetchDocuments("posts", null, uid);
 
-    const post = [];
+    // posts do usuário
 
     return (
         <div className={stylesPattern.container}>
             <h1> Dashboard</h1>
             <div className={styles.container_dashboard}>
-                {post && post.length === 0 ? (
+                {posts && posts.length === 0 ? (
                     <div className={styles.no_posts}>
                         <h3>Voce ainda não tem posts para gerenciar!</h3>
                         <p>Comece a postar </p>
@@ -33,6 +37,9 @@ function Dashboard() {
                         <p>Gerencie os seus posts</p>
                     </div>
                 )}
+
+                {posts &&
+                    posts.map((post) => <h3 key={post.id}>{post.title}</h3>)}
             </div>
         </div>
     );
