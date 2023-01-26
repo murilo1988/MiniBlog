@@ -15,9 +15,19 @@ function Post() {
         <div className={stylesPattern.container}>
             {post && (
                 <>
-                    <h1>{post.title}</h1>
                     <div className={styles.container_body}>
-                        <p>{post.body}</p>
+                        <div className={styles.title_post}>
+                            <h1>{post.title}</h1>
+                        </div>
+
+                        <div className={styles.body_post}>
+                            <div className={styles.body_img}>
+                                <img src={post.image} alt={post.title} />
+                            </div>
+                            <div className={styles.body_text}>
+                                <p>{post.body}</p>
+                            </div>
+                        </div>
                     </div>
                 </>
             )}

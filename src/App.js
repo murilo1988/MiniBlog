@@ -39,7 +39,11 @@ function App() {
     }, [auth]);
 
     if (loadingUser) {
-        <p>Carregando ...</p>;
+        return (
+            <p style={{ fontSize: "1.4em", textAlign: "center" }}>
+                Carregando ...
+            </p>
+        );
     }
 
     return (
@@ -59,17 +63,13 @@ function App() {
                             <Route
                                 path="/login"
                                 element={
-                                    !user ? <Login /> : <Navigate to="/home" />
+                                    !user ? <Login /> : <Navigate to="/" />
                                 }
                             />
                             <Route
                                 path="/register"
                                 element={
-                                    !user ? (
-                                        <Register />
-                                    ) : (
-                                        <Navigate to="/home" />
-                                    )
+                                    !user ? <Register /> : <Navigate to="/" />
                                 }
                             />
                             <Route
