@@ -36,28 +36,37 @@ function Dashboard() {
                     </div>
                 ) : (
                     <div>
-                        <p>Gerencie os seus posts</p>
+                        <h2>Gerencie os seus posts</h2>
                         <div className={styles.posts}>
                             {posts &&
                                 posts.map((post) => (
-                                    <div key={post.id}>
+                                    <div
+                                        className={styles.post_individual}
+                                        key={post.id}
+                                    >
                                         <div>
                                             <h3>{post.title}</h3>
                                         </div>
+                                        <div>
+                                            <img
+                                                src={post.image}
+                                                alt={post.title}
+                                            />
+                                        </div>
                                         <div className={styles.edit_btns}>
-                                            <button>
-                                                <Link
-                                                    to={`/posts/${post.id}`}
-                                                    className={styles.look_post}
-                                                >
+                                            <button
+                                                className={styles.look_post}
+                                            >
+                                                <Link to={`/post/${post.id}`}>
                                                     {" "}
                                                     Ver Post
                                                 </Link>
                                             </button>
-                                            <button>
+                                            <button
+                                                className={styles.edit_post}
+                                            >
                                                 <Link
                                                     to={`/posts/edit/${post.id}`}
-                                                    className={styles.edit_post}
                                                 >
                                                     Editar
                                                 </Link>

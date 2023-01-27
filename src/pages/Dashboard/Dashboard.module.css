@@ -1,8 +1,7 @@
 .container_dashboard {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-
+    margin: 0 auto;
     text-align: center;
     padding: 20px;
 }
@@ -13,9 +12,28 @@
 
 .posts {
     display: grid;
-    grid-template-rows: 200px 100px;
-    grid-template-columns: 33% 33% 33%;
+    justify-content: space-around;
+    grid-template-columns: 300px 300px 300px;
     align-items: center;
+    gap: 10px;
+    margin-top: 40px;
+}
+.post_individual {
+    display: grid;
+    grid-template-rows: 50px 300px 30px;
+    padding: 40px;
+    box-shadow: 5px 8px 19px -9px rgba(0, 0, 0, 0.1), -8px -3px 35px -5px rgba(0, 0, 0, 0.1);
+}
+.post_individual img {
+    max-width: 200px;
+}
+
+.look_post {
+    background-color: #3d3d3f;
+    color: white;
+}
+.edit_post {
+    background-color: #7dce94;
 }
 
 .edit_btns {
@@ -25,17 +43,21 @@
     gap: 10px;
     color: white;
 }
+
 .edit_btns button {
     border: none;
     padding: 5px;
-    font-size: 0.9em;
-    color: white;
+    width: 70px;
+    font-size: 1em;
 }
 .edit_btns a {
     border: none;
-    padding: 5px;
+
     font-size: 0.9em;
     color: white;
+}
+.delete_post {
+    color: #9f9fa1;
 }
 
 .container_dashboard button:active {
@@ -48,4 +70,11 @@
     transform: none;
     color: rgba(93, 93, 93, 0.553);
     box-shadow: inset 15px 15px 4px -14px rgba(0, 0, 0, 0.1), 5px 1px 6px -9px rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (max-width: 1030px) {
+    .posts {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
 }
