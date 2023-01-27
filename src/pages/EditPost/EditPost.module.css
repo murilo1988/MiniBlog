@@ -1,6 +1,3 @@
-/* * {
-    border: 1px solid black;
-} */
 .container_post p {
     text-align: center;
     margin-bottom: 35px;
@@ -13,6 +10,7 @@
     align-items: center;
     font-size: 1em;
     width: 50%;
+
     margin: 0 auto;
 }
 
@@ -57,11 +55,28 @@
     height: 150px;
     border: none;
     padding-left: 10px;
-    margin-bottom: 20px;
     margin-left: -20px;
     box-shadow: inset 15px -13px 3px -15px rgba(0, 0, 0, 0.206), inset -3px 2px 3px -2px rgba(0, 0, 0, 0.1);
     color: rgb(0, 0, 0);
     resize: none;
+}
+
+.preview_image {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 400px;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: -100px;
+}
+.preview_image p {
+    margin-top: 100px;
+}
+
+.preview_image img {
+    max-width: 60%;
+    margin: 0 auto;
 }
 
 .container_post button {
@@ -111,6 +126,13 @@
         width: 90%;
         padding: 0.28em 10px;
         margin: 0 auto;
+    }
+    .image_preview {
+        max-width: 50%;
+    }
+
+    .preview_title {
+        margin-top: 0px;
     }
 
     .container_post label span {
