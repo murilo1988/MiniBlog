@@ -25,6 +25,7 @@ import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import DropdownList from "./components/DropdownList";
 import Search from "./pages/Search/Search";
+import EditPost from "./pages/EditPost/EditPost";
 
 function App() {
     const [user, setUser] = useState(undefined);
@@ -113,6 +114,16 @@ function App() {
                                 element={
                                     user ? (
                                         <Dashboard />
+                                    ) : (
+                                        <Navigate to="/login" />
+                                    )
+                                }
+                            />
+                            <Route
+                                path="/posts/edit/:id"
+                                element={
+                                    user ? (
+                                        <EditPost />
                                     ) : (
                                         <Navigate to="/login" />
                                     )
